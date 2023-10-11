@@ -6,7 +6,6 @@
 #include <stddef.h>
 #include <errno.h>
 #include <sys/wait.h>
-#include <errno.h>:
 #include <signal.h>
 #include <fcntl.h>
 #include <unistd.h>
