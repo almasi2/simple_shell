@@ -56,3 +56,11 @@ typedef struct builtins
 
 
 /* --------------- MAIN FUNCTIONS ----------------- */
+
+
+/*---------------  shell.c  ------------*/
+
+void get_infin_loop(char *prompt, data_of_program *data);
+void initialize_data(data_of_program *data, int arc, char *argv[], char **env);
+void print_prompt_n(int opr UNUSED);
+
