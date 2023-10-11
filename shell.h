@@ -31,3 +31,14 @@
  * @env: the copy of the environment
  * @alias_list: the  array of pointers with aliiases.
  */
+typedef struct info
+{
+	char *program_name;
+	char *input_line;
+	char *command_name;
+	int exec_counter;
+	int file_descriptor;
+	char **tokens;
+	char **env;
+	char **alias_list;
+} program_data;
