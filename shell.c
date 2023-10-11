@@ -89,3 +89,33 @@ void print_prompt_n(int opr UNUSED)
 	_print(PROMPT_MSG);
 }
 
+void get_infin_loop(char *prompt, data_of_program *data)
+{
+	int err_cod = 0, string_len = 0;
+
+	while (++(data->exec_counter))
+	{
+		_print(prompt);
+		err_cod = string_len = _getline(data);
+
+		if (err_cod == EOF)
+		{
+			free_all_data(data);
+			exit(errno);
+		}
+		if (string_len >= 1)
+		{
+			expand_alias(data);
+			expand_variables(data);
+			tokenize(data);
+			if (data->tokens[0])
+			{
+				err_cod = execute(data);
+				if (err_cod != 0)
+					_print_error(err_cod, data);
+			}
+			free_recurrent_data(data);
+		}
+	}
+}
+
