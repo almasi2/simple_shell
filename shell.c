@@ -77,6 +77,12 @@ void initialize_data(data_of_program *data, int argc, char *argv[], char **env)
 	}
 }
 
+/**
+ * print_prompt_n - print prompt in new line
+ * if signal SIGINT send to program
+ * @UNUSED: prototype option
+ */
+
 void print_prompt_n(int opr UNUSED)
 {
 	_print("\n");
