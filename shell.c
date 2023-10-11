@@ -27,8 +27,13 @@ int main(int argc, char *argv[], char *env[])
 }
 
 
-
-
+/**
+ * initialize_data - struct initialization with program information
+ * @data: pointer to data struct
+ * @argv: arguments array passed to program execution
+ * @env: environ passed to execution of program
+ * @argc: no. of values from command line
+ */
 
 void initialize_data(data_of_program *data, int argc, char *argv[], char **env)
 {
