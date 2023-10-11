@@ -37,7 +37,7 @@ int main(int argc, char *argv[], char *env[])
 
 void initialize_data(data_of_program *data, int argc, char *argv[], char **env)
 {
-	int i = 0;
+	int j = 0;
 
 	data->program_name = argv[0];
 	data->input_line = NULL;
@@ -62,12 +62,12 @@ void initialize_data(data_of_program *data, int argc, char *argv[], char **env)
 	data->env = malloc(sizeof(char *) * 50);
 	if (env)
 	{
-		for (; env[i]; i++)
+		for (; env[j]; j++)
 		{
-			data->env[i] = str_duplicate(env[i]);
+			data->env[j] = str_duplicate(env[j]);
 		}
 	}
-	data->env[i] = NULL;
+	data->env[j] = NULL;
 	env = data->env;
 
 	data->alias_list = malloc(sizeof(char *) * 20);
@@ -76,3 +76,10 @@ void initialize_data(data_of_program *data, int argc, char *argv[], char **env)
 		data->alias_list[i] = NULL;
 	}
 }
+
+void print_prompt_n(int opr UNUSED)
+{
+	_print("\n");
+	_print(PROMPT_MSG);
+}
+
