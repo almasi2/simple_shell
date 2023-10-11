@@ -1,17 +1,17 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-#include <stdio.h> /* for printf*/
-#include <unistd.h> /* for fork, execve*/
+#include <stdio.h> /* printf library*/
+#include <unistd.h> /* fork,execve library*/
 #include <stdlib.h>
-#include <string.h> /* for strtok*/
+#include <string.h> /* strtok */
 #include <stddef.h>
-#include <errno.h> /* for errno and perror */
-#include <sys/types.h> /* for type pid */
-#include <sys/wait.h> /* for wait */
-#include <sys/stat.h> /* for use of stat function */
-#include <signal.h> /* for signal management */
-#include <fcntl.h> /* for open files*/
+#include <errno.h> /* errno and perror */
+#include <sys/types.h> /* type pid */
+#include <sys/wait.h> /* wait */
+#include <sys/stat.h> /* stat function */
+#include <signal.h> /* signal management */
+#include <fcntl.h> /* open files*/
 
 /************* MACROS **************/
 
