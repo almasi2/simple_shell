@@ -89,6 +89,13 @@ void print_prompt_n(int opr UNUSED)
 	_print(PROMPT_MSG);
 }
 
+
+/**
+ * get_infin_loop - infinite loop showing prompt
+ * @prompt: prompt for printing
+ * @data: infinite loop showing prompt
+ */
+
 void get_infin_loop(char *prompt, data_of_program *data)
 {
 	int err_cod = 0, string_len = 0;
