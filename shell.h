@@ -42,3 +42,17 @@ typedef struct info
 	char **env;
 	char **alias_list;
 } program_data;
+
+/**
+ * struct builtins - builtins structure
+ * @builtin: builtin name
+ * @function: function to be called for every single builtin
+ */
+typedef struct builtins
+{
+	char *builtin;
+	int (*function)(data_of_program *data);
+} builtins;
+
+
+/* --------------- MAIN FUNCTIONS ----------------- */
