@@ -70,7 +70,10 @@ int line_fetch(program_data *data);
 
 /*------------- tokenize_str.c --------*/
 
-void tokenization(program_data *data);
 char *token_str(char *line, char *delim);
+
+/*------------- tokenization.c ---------*/
+
+void tokenization(program_data *data);
 
 #endif
