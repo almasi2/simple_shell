@@ -14,7 +14,7 @@ int main(int argc, char *argv[], char *env[])
 
 	initialize_data(data, argc, argv, env);
 
-	signal(SIGINT, handle_ctrl_c);
+	signal(SIGINT, print_prompt_n);
 
 	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO) && argc == 1)
 	{/*interactive mode,in the terminal */
@@ -35,7 +35,7 @@ int main(int argc, char *argv[], char *env[])
  * @argc: no. of values from command line
  */
 
-void initialize_data(data_of_program *data, int argc, char *argv[], char **env)
+void initialize_data(program_data *data, int argc, char *argv[], char **env)
 {
 	int j = 0;
 
@@ -96,7 +96,7 @@ void print_prompt_n(int opr UNUSED)
  * @data: infinite loop showing prompt
  */
 
-void get_infin_loop(char *prompt, data_of_program *data)
+void get_infin_loop(char *prompt, program_data *data)
 {
 	int err_cod = 0, string_len = 0;
 

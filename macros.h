@@ -3,5 +3,6 @@
 
 /* Prompt that will be printed */
 #define PROMPT_MSG "Bilionaires$$ "
+#define UNUSED __attribute__((unused))
 
 #endif

@@ -50,7 +50,7 @@ typedef struct info
 typedef struct builtins
 {
 	char *builtin;
-	int (*function)(data_of_program *data);
+	int (*function)(program_data *data);
 } builtins;
 
 
@@ -59,8 +59,8 @@ typedef struct builtins
 
 /*---------------  shell.c  ------------*/
 
-void get_infin_loop(char *prompt, data_of_program *data);
-void initialize_data(data_of_program *data, int arc, char *argv[], char **env);
+void get_infin_loop(char *prompt, program_data *data);
+void initialize_data(program_data *data, int arc, char *argv[], char **env);
 void print_prompt_n(int opr UNUSED);
 
 #endif
