@@ -63,4 +63,14 @@ void get_infin_loop(char *prompt, program_data *data);
 void initialize_data(program_data *data, int arc, char *argv[], char **env);
 void print_prompt_n(int opr UNUSED);
 
+/*-------------	line_env.c ----------*/
+
+int logic_checks(char *array_commands[], int i, char array_operators[]);
+int line_fetch(program_data *data);
+
+/*------------- tokenize_str.c --------*/
+
+void tokenization(program_data *data);
+char *token_str(char *line, char *delim);
+
 #endif
