@@ -6,34 +6,34 @@
  */
 int exec(program_data *data)
 {
-	int retval = 0, status;
+	int retrival = 0, status;
 	pid_t pidd;
 
-	retval = builtins_list(data);
-	if (retval != -1)
-		return (retval);
+	retrival = built_list(data);
+	if (retrival != -1)
+		return (retrival);
 
-	retval = find_program(data);
-	if (retval)
-	{/* program not found */
-		return (retval);
+	retrival = find_program(data);
+	if (retrival)
+	{
+		return (retrival);
 	}
 	else
-	{/* program found */
-		pidd = fork(); /* child process creation */
+	{
+		pidd = fork();
 		if (pidd == -1)
-		{ /* fork call fail */
+		{
 			perror(data->command_name);
 			exit(EXIT_FAILURE);
 		}
 		if (pidd == 0)
-		{/* child process, executes program*/
-			retval = execve(data->tokens[0], data->tokens, data->env);
-			if (retval == -1) /* error when executed*/
+		{
+			retrival = execve(data->tokens[0], data->tokens, data->env);
+			if (retrival == -1)
 				perror(data->command_name), exit(EXIT_FAILURE);
 		}
 		else
-		{/* father, waits to check child exit status */
+		{
 			wait(&status);
 			if (WIFEXITED(status))
 				errno = WEXITSTATUS(status);
