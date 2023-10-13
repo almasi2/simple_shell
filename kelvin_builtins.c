@@ -41,7 +41,7 @@ int builtin_change(program_data *data)
 		{
 			dir_old = env_get_key("OLDPWD", data);
 			if (dir_old)
-				error_code = set_work_directory(data, dir_old);
+				error_code = work_dir_setup(data, dir_old);
 			_print(env_get_key("PWD", data));
 			_print("\n");
 
@@ -49,7 +49,7 @@ int builtin_change(program_data *data)
 		}
 		else
 		{
-			return (set_work_directory(data, data->tokens[1]));
+			return (work_dir_setup(data, data->tokens[1]));
 		}
 	}
 	else
@@ -57,7 +57,7 @@ int builtin_change(program_data *data)
 		if (!dir_home)
 			dir_home = getcwd(old_dir, 128);
 
-		return (set_work_directory(data, dir_home));
+		return (work_dir_setup(data, dir_home));
 	}
 	return (0);
 }

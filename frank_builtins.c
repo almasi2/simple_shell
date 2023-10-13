@@ -58,7 +58,7 @@ int builtn_assist(program_data *data)
 
 	for (j = 0; feedback[j]; j++)
 	{
-		lenth = str_lenth(data->tokens[1]);
+		lenth = str_length(data->tokens[1]);
 		if (str_compare(data->tokens[1], feedback[j], lenth))
 		{
 			_print(feedback[j] + lenth + 1);
