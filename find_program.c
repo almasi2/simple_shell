@@ -13,7 +13,6 @@ int find_program(program_data *data)
 	if (!data->command_name)
 		return (2);
 
-	/
 	if (data->command_name[0] == '/' || data->command_name[0] == '.')
 		return (check_file(data->command_name));
 
