@@ -113,4 +113,14 @@ void variable_expansion(program_data *data);
 int add_buffer(char *buffer, char *str_to_add);
 void alias_expansion(program_data *data);
 
+/*---------- find_program.c -----------*/
+
+int find_program(data_of_program *data);
+
+
+/*----------program_path.c----------*/
+
+char **tokenize_path(data_of_program *data);
+int check_file(char *full_path);
+
 #endif
