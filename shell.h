@@ -115,12 +115,12 @@ void alias_expansion(program_data *data);
 
 /*---------- find_program.c -----------*/
 
-int find_program(data_of_program *data);
+int find_program(program_data *data);
 
 
 /*----------program_path.c----------*/
 
-char **tokenize_path(data_of_program *data);
+char **tokenize_path(program_data *data);
 int check_file(char *full_path);
 
 #endif
