@@ -29,7 +29,7 @@ char **tokenize_path(program_data *data)
 	tokens = malloc(sizeof(char *) * counter_directories);
 
 	j = 0;
-	tokens[i] = str_duplicate(_strtok(PATH, ":"));
+	tokens[j] = str_duplicate(_strtok(PATH, ":"));
 	while (tokens[j++])
 	{
 		tokens[j] = str_duplicate(_strtok(NULL, ":"));
