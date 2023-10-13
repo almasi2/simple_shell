@@ -76,4 +76,9 @@ char *token_str(char *line, char *delim);
 
 void tokenization(program_data *data);
 
+/*----------- exec.c -----------*/
+
+int exec(program_data *data);
+
+
 #endif
