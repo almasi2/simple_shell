@@ -1,0 +1,51 @@
+#include "shell.h"
+
+/**
+ * variable_expansion - expand variables
+ * @data: pointer to program data struct
+ * Return: nothing, sets errno.
+ */
+
+void variable_expansion(program_data *data)
+{
+	int j, k;
+	char line[BUFFER_SIZE] = {0}, expansion[BUFFER_SIZE] = {'\0'}, *temp;
+
+	if (data->input_line == NULL)
+		return;
+	buffer_add(line, data->input_line);
+	for (j = 0; line[j]; j++)
+		if (line[j] == '#')
+			line[j--] = '\0';
+		else if (line[j] == '$' && line[j + 1] == '?')
+		{
+			line[j] = '\0';
+			long_to_string(errno, expansion, 10);
+			buffer_add(line, expansion);
+			buffer_add(line, data->input_line + j + 2);
+		}
+		else if (line[j] == '$' && line[j + 1] == '$')
+		{
+			line[j] = '\0';
+			long_to_string(getpid(), expansion, 10);
+			buffer_add(line, expansion);
+			buffer_add(line, data->input_line + j + 2);
+		}
+		else if (line[j] == '$' && (line[j + 1] == ' ' || line[j + 1] == '\0'))
+			continue;
+		else if (line[j] == '$')
+		{
+			for (k = 1; line[j + k] && line[j + k] != ' '; k++)
+				expansion[k - 1] = line[j + k];
+			temp = env_get_key(expansion, data);
+			line[j] = '\0', expansion[0] = '\0';
+			buffer_add(expansion, line + j + k);
+			temp ? buffer_add(line, temp) : 1;
+			buffer_add(line, expansion);
+		}
+	if (!str_compare(data->input_line, line, 0))
+	{
+		free(data->input_line);
+		data->input_line = str_duplicate(line);
+	}
+}

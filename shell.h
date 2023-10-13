@@ -104,5 +104,8 @@ int env_setup(program_data *data);
 int set_env(program_data *data);
 int unset_env(program_data *data);
 
+/*-----------variable_expansion.c-----------*/
+
+void variable_expansion(program_data *data);
 
 #endif
