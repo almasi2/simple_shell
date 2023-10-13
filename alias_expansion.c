@@ -14,7 +14,7 @@ void alias_expansion(program_data *data)
 	if (data->input_line == NULL)
 		return;
 
-	buffer_add(line, data->input_line);
+	add_buffer(line, data->input_line);
 
 	for (i = 0; line[i]; i++)
 	{
@@ -26,11 +26,11 @@ void alias_expansion(program_data *data)
 		if (temp)
 		{
 			expansion[0] = '\0';
-			buffer_add(expansion, line + i + j);
+			add_buffer(expansion, line + i + j);
 			line[i] = '\0';
-			buffer_add(line, temp);
+			add_buffer(line, temp);
 			line[str_length(line)] = '\0';
-			buffer_add(line, expansion);
+			add_buffer(line, expansion);
 			was_expanded = 1;
 		}
 		break;
