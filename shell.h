@@ -95,5 +95,14 @@ int work_dir_setup(program_data *data, char *new_dir);
 int builtn_assist(program_data *data);
 int alias_builtn(program_data *data);
 
+/*----------- env_setup.c *------------*/
+
+int env_setup(program_data *data);
+
+/*---------- set_unset_env.c *-----------*/
+
+int set_env(program_data *data);
+int unset_env(program_data *data);
+
 
 #endif
