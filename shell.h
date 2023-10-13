@@ -84,5 +84,16 @@ int exec(program_data *data);
 
 int built_list(program_data *data);
 
+/*------------kelvin_builtins.c -------*/
+
+int ext_builtn(program_data *data);
+int builtin_change(program_data *data);
+
+/*----------- frank_builtins.c -------*/
+
+int work_dir_setup(program_data *data, char *new_dir);
+int builtn_assist(program_data *data);
+int alias_builtn(program_data *data);
+
 
 #endif
