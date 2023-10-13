@@ -13,7 +13,7 @@ void variable_expansion(program_data *data)
 
 	if (data->input_line == NULL)
 		return;
-	buffer_add(line, data->input_line);
+	add_buffer(line, data->input_line);
 	for (j = 0; line[j]; j++)
 		if (line[j] == '#')
 			line[j--] = '\0';
@@ -21,15 +21,15 @@ void variable_expansion(program_data *data)
 		{
 			line[j] = '\0';
 			long_to_string(errno, expansion, 10);
-			buffer_add(line, expansion);
-			buffer_add(line, data->input_line + j + 2);
+			add_buffer(line, expansion);
+			add_buffer(line, data->input_line + j + 2);
 		}
 		else if (line[j] == '$' && line[j + 1] == '$')
 		{
 			line[j] = '\0';
 			long_to_string(getpid(), expansion, 10);
-			buffer_add(line, expansion);
-			buffer_add(line, data->input_line + j + 2);
+			add_buffer(line, expansion);
+			add_buffer(line, data->input_line + j + 2);
 		}
 		else if (line[j] == '$' && (line[j + 1] == ' ' || line[j + 1] == '\0'))
 			continue;
@@ -39,9 +39,9 @@ void variable_expansion(program_data *data)
 				expansion[k - 1] = line[j + k];
 			temp = env_get_key(expansion, data);
 			line[j] = '\0', expansion[0] = '\0';
-			buffer_add(expansion, line + j + k);
-			temp ? buffer_add(line, temp) : 1;
-			buffer_add(line, expansion);
+			add_buffer(expansion, line + j + k);
+			temp ? add_buffer(line, temp) : 1;
+			add_buffer(line, expansion);
 		}
 	if (!str_compare(data->input_line, line, 0))
 	{

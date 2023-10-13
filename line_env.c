@@ -54,31 +54,31 @@ int line_fetch(program_data *data)
 */
 int logic_checks(char *array_commands[], int i, char array_operators[])
 {
-	char *tmp = NULL;
+	char *temp = NULL;
 	int k;
 
 	for (k = 0; array_commands[i] != NULL  && array_commands[i][k]; k++)
 	{
 		if (array_commands[i][k] == '&' && array_commands[i][k + 1] == '&')
 		{
-			tmp = array_commands[i];
+			temp = array_commands[i];
 			array_commands[i][k] = '\0';
 			array_commands[i] = str_duplicate(array_commands[i]);
-			array_commands[i + 1] = str_duplicate(tmp + k + 2);
+			array_commands[i + 1] = str_duplicate(temp + k + 2);
 			i++;
 			array_operators[i] = '&';
-			free(tmp);
+			free(temp);
 			k = 0;
 		}
 		if (array_commands[i][k] == '|' && array_commands[i][k + 1] == '|')
 		{
-			tmp = array_commands[i];
+			temp = array_commands[i];
 			array_commands[i][k] = '\0';
 			array_commands[i] = str_duplicate(array_commands[i]);
-			array_commands[i + 1] = str_duplicate(tmp + k + 2);
+			array_commands[i + 1] = str_duplicate(temp + k + 2);
 			i++;
 			array_operators[i] = '|';
-			free(tmp);
+			free(temp);
 			k = 0;
 		}
 	}

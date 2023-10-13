@@ -108,4 +108,9 @@ int unset_env(program_data *data);
 
 void variable_expansion(program_data *data);
 
+/*------------ alias_expansion.c ----------*/
+
+int add_buffer(char *buffer, char *str_to_add);
+void alias_expansion(data_of_program *data);
+
 #endif
