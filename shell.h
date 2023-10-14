@@ -139,4 +139,12 @@ int _atoi(char *s);
 int chars_count(char *string, char *character);
 void string_conv(long number, char *string, int base);
 
+
+/*-------------print.c-----------*/
+
+int _print(char *string);
+int _printe(char *string);
+int _print_error(int errorcode, data_of_program *data);
+
+
 #endif
