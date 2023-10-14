@@ -130,4 +130,13 @@ void free_data_recurrent(program_data *data);
 void free_full_data(program_data *data);
 void free_array_pointers(char **array);
 
+/*------------- _atoi.c ------------*/
+
+int _atoi(char *s);
+
+/*------------- string.c ------------*/
+
+int chars_count(char *string, char *character);
+void string_conv(long number, char *string, int base);
+
 #endif
