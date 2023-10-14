@@ -163,5 +163,10 @@ void print_environ(data_of_program *data);
 int set_key(char *key, char *value, data_of_program *data);
 
 
+/*-------------get_remove_key.c---------------*/
+
+char *env_get_key(char *key, program_data *data);
+int key_remove(char *key, program_data *data);
+
 
 #endif
