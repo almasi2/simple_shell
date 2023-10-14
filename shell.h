@@ -146,5 +146,15 @@ int _print(char *string);
 int _printe(char *string);
 int _print_error(int errorcode, data_of_program *data);
 
+/*------------ compare_reverse_string.c ---------*/
+
+void str_reverse(char *string);
+int str_compare(char *string1, char *string2, int number);
+
+/*----------- concat_duplicate.c -------------*/
+
+int str_length(char *string);
+char *str_duplicate(char *string);
+char *str_concat(char *string1, char *string2);
 
 #endif
