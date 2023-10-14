@@ -123,4 +123,11 @@ int find_program(program_data *data);
 char **tokenize_path(program_data *data);
 int check_file(char *full_path);
 
+
+/*-------------free_func.c---------------*/
+
+void free_data_recurrent(program_data *data);
+void free_full_data(program_data *data);
+void free_array_pointers(char **array);
+
 #endif
