@@ -157,4 +157,11 @@ int str_length(char *string);
 char *str_duplicate(char *string);
 char *str_concat(char *string1, char *string2);
 
+/*------------- setup_env.c --------------*/
+
+void print_environ(data_of_program *data);
+int set_key(char *key, char *value, data_of_program *data);
+
+
+
 #endif
