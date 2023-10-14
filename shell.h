@@ -169,4 +169,10 @@ char *env_get_key(char *key, program_data *data);
 int key_remove(char *key, program_data *data);
 
 
+/*----------------alias.c---------------*/
+
+int print_alias(program_data *data, char *alias);
+char *get_alias(program_data *data, char *name);
+
+
 #endif
