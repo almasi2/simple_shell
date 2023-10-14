@@ -144,7 +144,7 @@ void string_conv(long number, char *string, int base);
 
 int _print(char *string);
 int _printe(char *string);
-int _print_error(int errorcode, data_of_program *data);
+int _print_error(int errorcode, program_data *data);
 
 /*------------ compare_reverse_string.c ---------*/
 
@@ -174,5 +174,8 @@ int key_remove(char *key, program_data *data);
 int print_alias(program_data *data, char *alias);
 char *get_alias(program_data *data, char *name);
 
+/*--------------mypid.c-----------*/
+
+int set_alias(char *alias_string, program_data *data);
 
 #endif
