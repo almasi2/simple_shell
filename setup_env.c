@@ -25,12 +25,10 @@ int set_key(char *key, char *value, program_data *data)
 		 data->env[i][key_length] == '=')
 		{
 			is_new_key = 0;
-			
 			free(data->env[j]);
 			break;
 		}
 	}
-	
 	data->env[j] = str_concat(str_duplicate(key), "=");
 	data->env[j] = str_concat(data->env[j], value);
 

@@ -159,8 +159,8 @@ char *str_concat(char *string1, char *string2);
 
 /*------------- setup_env.c --------------*/
 
-void print_environ(data_of_program *data);
-int set_key(char *key, char *value, data_of_program *data);
+void print_environ(program_data *data);
+int set_key(char *key, char *value, program_data *data);
 
 
 /*-------------get_remove_key.c---------------*/
