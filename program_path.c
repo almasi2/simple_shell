@@ -18,7 +18,7 @@ char **tokenize_path(program_data *data)
 		return (NULL);
 	}
 
-	PATH = str_duplicate(PATH);
+	PATH = str_dup(PATH);
 
 	for (j = 0; PATH[j]; j++)
 	{
@@ -29,10 +29,10 @@ char **tokenize_path(program_data *data)
 	tokens = malloc(sizeof(char *) * counter_directories);
 
 	j = 0;
-	tokens[j] = str_duplicate(token_str(PATH, ":"));
+	tokens[j] = str_dup(token_str(PATH, ":"));
 	while (tokens[j++])
 	{
-		tokens[j] = str_duplicate(token_str(NULL, ":"));
+		tokens[j] = str_dup(token_str(NULL, ":"));
 	}
 
 	free(PATH);

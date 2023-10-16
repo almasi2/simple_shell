@@ -29,7 +29,7 @@ void alias_expansion(program_data *data)
 			add_buffer(expansion, line + i + j);
 			line[i] = '\0';
 			add_buffer(line, temp);
-			line[str_length(line)] = '\0';
+			line[str_len(line)] = '\0';
 			add_buffer(line, expansion);
 			was_expanded = 1;
 		}
@@ -38,7 +38,7 @@ void alias_expansion(program_data *data)
 	if (was_expanded)
 	{
 		free(data->input_line);
-		data->input_line = str_duplicate(line);
+		data->input_line = str_dup(line);
 	}
 }
 
@@ -52,7 +52,7 @@ int add_buffer(char *buffer, char *str_to_add)
 {
 	int length, j;
 
-	length = str_length(buffer);
+	length = str_len(buffer);
 	for (j = 0; str_to_add[j]; j++)
 	{
 		buffer[length + j] = str_to_add[j];

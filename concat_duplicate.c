@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * str_length - return string length
+ * str_len - return string length
  * @string: pointer
  * Return: string length
  */
-int str_length(char *string)
+int str_len(char *string)
 {
 	int length = 0;
 
@@ -34,11 +34,11 @@ char *str_concat(char *string1, char *string2)
 
 	if (string1 == NULL)
 		string1 = "";
-	length1 = str_length(string1);
+	length1 = str_len(string1);
 
 	if (string2 == NULL)
 		string2 = "";
-	length2 = str_length(string2);
+	length2 = str_len(string2);
 
 	result = malloc(sizeof(char) * (length1 + length2 + 1));
 	if (result == NULL)
@@ -65,11 +65,11 @@ char *str_concat(char *string1, char *string2)
 
 
 /**
- * str_duplicate - duplicate strng
+ * str_dup - duplicate strng
  * @string: Strng for copying
  * Return: array pointer
  */
-char *str_duplicate(char *string)
+char *str_dup(char *string)
 {
 	char *result;
 	int length, j;
@@ -77,7 +77,7 @@ char *str_duplicate(char *string)
 	if (string == NULL)
 		return (NULL);
 
-	length = str_length(string) + 1;
+	length = str_len(string) + 1;
 
 	result = malloc(sizeof(char) * length);
 

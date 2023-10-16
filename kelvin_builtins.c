@@ -37,7 +37,7 @@ int builtin_change(program_data *data)
 
 	if (data->tokens[1])
 	{
-		if (str_compare(data->tokens[1], "-", 0))
+		if (str_comp(data->tokens[1], "-", 0))
 		{
 			dir_old = env_get_key("OLDPWD", data);
 			if (dir_old)

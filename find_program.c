@@ -17,7 +17,7 @@ int find_program(program_data *data)
 		return (check_file(data->command_name));
 
 	free(data->tokens[0]);
-	data->tokens[0] = str_concat(str_duplicate("/"), data->command_name);
+	data->tokens[0] = str_concat(str_dup("/"), data->command_name);
 	if (!data->tokens[0])
 		return (2);
 
@@ -36,7 +36,7 @@ int find_program(program_data *data)
 		{
 			errno = 0;
 			free(data->tokens[0]);
-			data->tokens[0] = str_duplicate(directories[j]);
+			data->tokens[0] = str_dup(directories[j]);
 			free_array_pointers(directories);
 			return (ret_code);
 		}

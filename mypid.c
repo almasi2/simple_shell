@@ -23,7 +23,7 @@ int set_alias(char *alias_string, program_data *data)
 		}
 
 	for (k = 0; data->alias_list[k]; k++)
-		if (str_compare(buffer, data->alias_list[k], j) &&
+		if (str_comp(buffer, data->alias_list[k], j) &&
 			data->alias_list[k][j] == '=')
 		{
 			free(data->alias_list[k]);
@@ -34,9 +34,9 @@ int set_alias(char *alias_string, program_data *data)
 	{
 		add_buffer(buffer, "=");
 		add_buffer(buffer, temp);
-		data->alias_list[k] = str_duplicate(buffer);
+		data->alias_list[k] = str_dup(buffer);
 	}
 	else
-		data->alias_list[k] = str_duplicate(alias_string);
+		data->alias_list[k] = str_dup(alias_string);
 	return (0);
 }

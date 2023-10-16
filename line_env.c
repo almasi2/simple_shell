@@ -29,7 +29,7 @@ int line_fetch(program_data *data)
 
 		j = 0;
 		do {
-			array_commands[j] = str_duplicate(token_str(j ? NULL : buff, "\n;"));
+			array_commands[j] = str_dup(token_str(j ? NULL : buff, "\n;"));
 			j = logic_checks(array_commands, j, array_operators);
 		} while (array_commands[j++]);
 	}
@@ -41,7 +41,7 @@ int line_fetch(program_data *data)
 		array_operators[j] = array_operators[j + 1];
 	}
 
-	return (str_length(data->input_line));
+	return (str_len(data->input_line));
 }
 
 /**
@@ -63,8 +63,8 @@ int logic_checks(char *array_commands[], int i, char array_operators[])
 		{
 			temp = array_commands[i];
 			array_commands[i][k] = '\0';
-			array_commands[i] = str_duplicate(array_commands[i]);
-			array_commands[i + 1] = str_duplicate(temp + k + 2);
+			array_commands[i] = str_dup(array_commands[i]);
+			array_commands[i + 1] = str_dup(temp + k + 2);
 			i++;
 			array_operators[i] = '&';
 			free(temp);
@@ -74,8 +74,8 @@ int logic_checks(char *array_commands[], int i, char array_operators[])
 		{
 			temp = array_commands[i];
 			array_commands[i][k] = '\0';
-			array_commands[i] = str_duplicate(array_commands[i]);
-			array_commands[i + 1] = str_duplicate(temp + k + 2);
+			array_commands[i] = str_dup(array_commands[i]);
+			array_commands[i + 1] = str_dup(temp + k + 2);
 			i++;
 			array_operators[i] = '|';
 			free(temp);

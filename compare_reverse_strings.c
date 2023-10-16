@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * str_compare - this will Compare two strings
+ * str_comp - this will Compare two strings
  * @string1: String one, or de shorta
  * @string2: String two, or de longer
  * @number: the number of chars to be compared, 0 when infinit
  * Return: return 1 if strings are equals,return 0 if the strings are diferet
  */
-int str_compare(char *string1, char *string2, int number)
+int str_comp(char *string1, char *string2, int number)
 {
 	int iterator;
 
@@ -19,7 +19,7 @@ int str_compare(char *string1, char *string2, int number)
 
 	if (number == 0)
 	{
-		if (str_length(string1) != str_length(string2))
+		if (str_len(string1) != str_len(string2))
 			return (0);
 		for (iterator = 0; string1[iterator]; iterator++)
 		{
@@ -48,7 +48,7 @@ int str_compare(char *string1, char *string2, int number)
 void str_reverse(char *string)
 {
 
-	int i = 0, length = str_length(string) - 1;
+	int i = 0, length = str_len(string) - 1;
 	char hold;
 
 	while (i < length)

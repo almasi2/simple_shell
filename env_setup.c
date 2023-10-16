@@ -19,7 +19,7 @@ int env_setup(program_data *data)
 		{
 			if (data->tokens[1][j] == '=')
 			{
-				var_copy = str_duplicate(env_get_key(cpname, data));
+				var_copy = str_dup(env_get_key(cpname, data));
 				if (var_copy != NULL)
 					set_key(cpname, data->tokens[1] + j + 1, data);
 

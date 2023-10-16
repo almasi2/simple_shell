@@ -64,7 +64,7 @@ void initialize_data(program_data *data, int argc, char *argv[], char **env)
 	{
 		for (; env[j]; j++)
 		{
-			data->env[j] = str_duplicate(env[j]);
+			data->env[j] = str_dup(env[j]);
 		}
 	}
 	data->env[j] = NULL;
@@ -119,7 +119,7 @@ void get_infin_loop(char *prompt, program_data *data)
 			{
 				err_cod = exec(data);
 				if (err_cod != 0)
-					_print_error(err_cod, data);
+					_print_err(err_cod, data);
 			}
 			free_data_recurrent(data);
 		}

@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * tokenization - a unction that separates the string using a designed delimiter
+ * tokenization - a unction that separates string usng a delimiter
  * @data: pointer to the program's data
  * Return: array of the different parts of the string
  */
@@ -9,7 +9,7 @@ void tokenization(program_data *data)
 	char *delimiter = " \t";
 	int i, j, counta = 2, length;
 
-	length = str_length(data->input_line);
+	length = str_len(data->input_line);
 	if (length)
 	{
 		if (data->input_line[length - 1] == '\n')
@@ -32,10 +32,10 @@ void tokenization(program_data *data)
 		exit(errno);
 	}
 	i = 0;
-	data->tokens[i] = str_duplicate(token_str(data->input_line, delimiter));
-	data->command_name = str_duplicate(data->tokens[0]);
+	data->tokens[i] = str_dup(token_str(data->input_line, delimiter));
+	data->command_name = str_dup(data->tokens[0]);
 	while (data->tokens[i++])
 	{
-		data->tokens[i] = str_duplicate(token_str(NULL, delimiter));
+		data->tokens[i] = str_dup(token_str(NULL, delimiter));
 	}
 }

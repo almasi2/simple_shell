@@ -13,7 +13,7 @@ int work_dir_setup(program_data *data, char *new_dir)
 
 	getcwd(old_dir, 128);
 
-	if (!str_compare(old_dir, new_dir, 0))
+	if (!str_comp(old_dir, new_dir, 0))
 	{
 		err_code = chdir(new_dir);
 		if (err_code == -1)
@@ -50,16 +50,16 @@ int builtn_assist(program_data *data)
 		perror(data->command_name);
 		return (5);
 	}
-	feedback[1] = HELP_EXIT_MSG;
-	feedback[2] = HELP_ENV_MSG;
-	feedback[3] = HELP_SETENV_MSG;
-	feedback[4] = HELP_UNSETENV_MSG;
-	feedback[5] = HELP_CD_MSG;
+	feedback[1] = EXIT_MSG;
+	feedback[2] = ENV_MSG;
+	feedback[3] = SET_ENV_MSG;
+	feedback[4] = UNSET_ENV_MSG;
+	feedback[5] = CD_MSG;
 
 	for (j = 0; feedback[j]; j++)
 	{
-		lenth = str_length(data->tokens[1]);
-		if (str_compare(data->tokens[1], feedback[j], lenth))
+		lenth = str_len(data->tokens[1]);
+		if (str_comp(data->tokens[1], feedback[j], lenth))
 		{
 			_print(feedback[j] + lenth + 1);
 			return (1);

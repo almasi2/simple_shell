@@ -144,17 +144,17 @@ void string_conv(long number, char *string, int base);
 
 int _print(char *string);
 int _printe(char *string);
-int _print_error(int errorcode, program_data *data);
+int _print_err(int errorcode, program_data *data);
 
 /*------------ compare_reverse_string.c ---------*/
 
 void str_reverse(char *string);
-int str_compare(char *string1, char *string2, int number);
+int str_comp(char *string1, char *string2, int number);
 
 /*----------- concat_duplicate.c -------------*/
 
-int str_length(char *string);
-char *str_duplicate(char *string);
+int str_len(char *string);
+char *str_dup(char *string);
 char *str_concat(char *string1, char *string2);
 
 /*------------- setup_env.c --------------*/

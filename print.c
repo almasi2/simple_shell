@@ -8,7 +8,7 @@
  */
 int _print(char *string)
 {
-	return (write(STDOUT_FILENO, string, str_length(string)));
+	return (write(STDOUT_FILENO, string, str_len(string)));
 }
 /**
  * _printe - this writes an array of chars instandar error
@@ -18,17 +18,17 @@ int _print(char *string)
  */
 int _printe(char *string)
 {
-	return (write(STDERR_FILENO, string, str_length(string)));
+	return (write(STDERR_FILENO, string, str_len(string)));
 }
 
 /**
- * _print_error - this writes a array of chars in the standart error.
+ * _print_err - this writes a array of chars in the standart error.
  * @data: a pointer to program's data.
  * @errorcode: this is the error code to be printed.
  * Return: number of bytes written.
  * On error, -1 is returned.
  */
-int _print_error(int errorcode, program_data *data)
+int _print_err(int errorcode, program_data *data)
 {
 	char n_as_string[10] = {'\0'};
 

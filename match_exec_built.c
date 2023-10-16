@@ -22,7 +22,7 @@ int built_list(program_data *data)
 
 	for (i = 0; options[i].builtin != NULL; i++)
 	{
-		if (str_compare(options[i].builtin, data->command_name, 0))
+		if (str_comp(options[i].builtin, data->command_name, 0))
 		{
 			return (options[i].function(data));
 		}

@@ -43,9 +43,9 @@ void variable_expansion(program_data *data)
 			temp ? add_buffer(line, temp) : 1;
 			add_buffer(line, expansion);
 		}
-	if (!str_compare(data->input_line, line, 0))
+	if (!str_comp(data->input_line, line, 0))
 	{
 		free(data->input_line);
-		data->input_line = str_duplicate(line);
+		data->input_line = str_dup(line);
 	}
 }
