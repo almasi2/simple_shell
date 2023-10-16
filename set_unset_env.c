@@ -17,7 +17,7 @@ int set_env(program_data *data)
 		return (5);
 	}
 
-	env_set_key(data->tokens[1], data->tokens[2], data);
+	set_key(data->tokens[1], data->tokens[2], data);
 
 	return (0);
 }
@@ -37,7 +37,7 @@ int unset_env(program_data *data)
 		perror(data->command_name);
 		return (5);
 	}
-	env_remove_key(data->tokens[1], data);
+	key_remove(data->tokens[1], data);
 
 	return (0);
 }

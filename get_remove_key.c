@@ -49,7 +49,7 @@ int key_remove(char *key, program_data *data)
 		if (str_compare(key, data->env[j], key_length) &&
 		 data->env[j][key_length] == '=')
 		{
-			free(data->env[i]);
+			free(data->env[j]);
 
 			j++;
 			for (; data->env[j]; j++)

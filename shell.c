@@ -71,9 +71,9 @@ void initialize_data(program_data *data, int argc, char *argv[], char **env)
 	env = data->env;
 
 	data->alias_list = malloc(sizeof(char *) * 20);
-	for (i = 0; i < 20; i++)
+	for (j = 0; j < 20; j++)
 	{
-		data->alias_list[i] = NULL;
+		data->alias_list[j] = NULL;
 	}
 }
 
@@ -103,25 +103,25 @@ void get_infin_loop(char *prompt, program_data *data)
 	while (++(data->exec_counter))
 	{
 		_print(prompt);
-		err_cod = string_len = _getline(data);
+		err_cod = string_len = line_fetch(data);
 
 		if (err_cod == EOF)
 		{
-			free_all_data(data);
+			free_full_data(data);
 			exit(errno);
 		}
 		if (string_len >= 1)
 		{
-			expand_alias(data);
-			expand_variables(data);
-			tokenize(data);
+			alias_expansion(data);
+			variable_expansion(data);
+			tokenization(data);
 			if (data->tokens[0])
 			{
-				err_cod = execute(data);
+				err_cod = exec(data);
 				if (err_cod != 0)
 					_print_error(err_cod, data);
 			}
-			free_recurrent_data(data);
+			free_data_recurrent(data);
 		}
 	}
 }

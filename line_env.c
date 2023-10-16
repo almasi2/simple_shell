@@ -29,8 +29,8 @@ int line_fetch(program_data *data)
 
 		j = 0;
 		do {
-			array_commands[j] = str_duplicate(_strtok(j ? NULL : buff, "\n;"));
-			j = check_logic_ops(array_commands, j, array_operators);
+			array_commands[j] = str_duplicate(token_str(j ? NULL : buff, "\n;"));
+			j = logic_checks(array_commands, j, array_operators);
 		} while (array_commands[j++]);
 	}
 

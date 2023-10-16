@@ -21,9 +21,9 @@ int work_dir_setup(program_data *data, char *new_dir)
 			errno = 2;
 			return (3);
 		}
-		env_set_key("PWD", new_dir, data);
+		set_key("PWD", new_dir, data);
 	}
-	env_set_key("OLDPWD", old_dir, data);
+	set_key("OLDPWD", old_dir, data);
 	return (0);
 }
 
@@ -84,7 +84,7 @@ int alias_builtn(program_data *data)
 
 	while (data->tokens[++j])
 	{
-		if (count_characters(data->tokens[j], "="))
+		if (chars_count(data->tokens[j], "="))
 			set_alias(data->tokens[j], data);
 		else
 			print_alias(data, data->tokens[j]);

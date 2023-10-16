@@ -20,7 +20,7 @@ int ext_builtn(program_data *data)
 			}
 		errno = _atoi(data->tokens[1]);
 	}
-	free_all_data(data);
+	free_full_data(data);
 	exit(errno);
 }
 

@@ -22,7 +22,7 @@ int set_key(char *key, char *value, program_data *data)
 	for (j = 0; data->env[j]; j++)
 	{
 		if (str_compare(key, data->env[j], key_length) &&
-		 data->env[i][key_length] == '=')
+		 data->env[j][key_length] == '=')
 		{
 			is_new_key = 0;
 			free(data->env[j]);

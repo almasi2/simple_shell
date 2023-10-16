@@ -26,9 +26,9 @@ int print_alias(program_data *data, char *alias)
 						break;
 				}
 				buffer[k + 1] = '\0';
-				buffer_add(buffer, "'");
-				buffer_add(buffer, data->alias_list[m] + k + 1);
-				buffer_add(buffer, "'\n");
+				add_buffer(buffer, "'");
+				add_buffer(buffer, data->alias_list[m] + k + 1);
+				add_buffer(buffer, "'\n");
 				_print(buffer);
 			}
 		}

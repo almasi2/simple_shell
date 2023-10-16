@@ -21,7 +21,7 @@ int env_setup(program_data *data)
 			{
 				var_copy = str_duplicate(env_get_key(cpname, data));
 				if (var_copy != NULL)
-					env_set_key(cpname, data->tokens[1] + j + 1, data);
+					set_key(cpname, data->tokens[1] + j + 1, data);
 
 				print_environ(data);
 				if (env_get_key(cpname, data) == NULL)
@@ -31,7 +31,7 @@ int env_setup(program_data *data)
 				}
 				else
 				{
-					env_set_key(cpname, var_copy, data);
+					set_key(cpname, var_copy, data);
 					free(var_copy);
 				}
 				return (0);

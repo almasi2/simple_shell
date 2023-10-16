@@ -20,14 +20,14 @@ void variable_expansion(program_data *data)
 		else if (line[j] == '$' && line[j + 1] == '?')
 		{
 			line[j] = '\0';
-			long_to_string(errno, expansion, 10);
+			string_conv(errno, expansion, 10);
 			add_buffer(line, expansion);
 			add_buffer(line, data->input_line + j + 2);
 		}
 		else if (line[j] == '$' && line[j + 1] == '$')
 		{
 			line[j] = '\0';
-			long_to_string(getpid(), expansion, 10);
+			string_conv(getpid(), expansion, 10);
 			add_buffer(line, expansion);
 			add_buffer(line, data->input_line + j + 2);
 		}
